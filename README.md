@@ -1,8 +1,6 @@
-# Phd project results on "Robust user-based concept hierarchy generation"  (CODENAME: #robust)
+# PhD project on "Robust user-based concept hierarchy generation"  (CODENAME: #robust)
 
-project_name/
-
-├── README.md                # Overview and instructions
+robust/
 
 ├── data/                    # Raw and/or processed data
 
