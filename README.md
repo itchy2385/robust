@@ -26,7 +26,7 @@ On the basis of the list of attributes and objects, a feature applicability task
 
 We extend the Leuven concept data by calculating first and second order attribute derivations as metrics of incidence-based attribute weighting. For this purpose, the Leuven concept data, originally based on several Excel files, was merged into a single JSON format.
 
-You can find the file here: https://github.com/itchy2385/robust/blob/main/data/leuven-extended_master.json
+You can find the file here: https://github.com/itchy2385/robust/blob/main/data/leuven_enhanced.json
 
 Currently, the extended Leuven concept data only contains “Feature Listing, Frequency, and Importance” (PART2) “Exemplar by Feature Applicability Matrices” (PART3) and omits “Exemplar Judgments and Characteristics” (PART1). The selected data under `exemplar_feature_judgments` are first grouped by `category` or `area` (hereafter called `categories`, e.g. birds or clothing), which also includes the abstracted `categories` animal and artifacts.
 
@@ -41,6 +41,10 @@ Leuven Concept Data contains two measures of user-based attribute weighting, Fea
 To apply the feature importance rating, the user is asked to rate how important or relevant they consider the attributes to be for the category on a 7-point Likert scale, ranging from -3 (for a very unimportant feature) to +3 (for a very important feature). Feature importance ratings are structured in the same direction as feature generation frequencies. Leuven Concept Data captures feature importance ratings by 12 participants for each domain and abstraction level. To allow a stringent data analysis we recoded the Likert scale from \( [-3, +3] \) to \( [1, 7] \) (e.g. `"importance" > "2" > "1": 1` is a feature importance rating on category level by participant 1 with an original Likert scale value of `-3`). We add arithmetic mean value over all feature importance ratings of an attribute having the key `0` (e.g. `"importance" > "2" > "0": 4.666666666666667`) 
 
 **Please note!** The more abstract categories `animals` and `artifacts` include only feature generation frequencies but no feature importance ratings. For these attributes include an empty map of feature importance ratings (e.g. `"importance": {}`)
+
+We extend the document by measures of incidence-based attribute weighting `derivative_size` i.e. first-order `first` and second-order attribute derivation `second`. For each attribute and each attribute derivation the measures are calculated on category- (e.g. `derivative_size > first > 2`) and exemplar level (e.g. `derivative_size > first > 1`). Attribute derivations were calculated for each user separated and for the summed view of that incidence data (see also https://github.com/itchy2385/robust/?tab=readme-ov-file#incidences).
+
+We are extending the document to include measures for incidence-based attribute weighting `derivative_size`, i.e., first-order attribute derivation `first` and second-order attribute derivation `second`. For each attribute and attribute derivation, the measures are calculated at the category level (e.g., `derivative_size > first > 2`) and at the example level (e.g., `derivative_size > first > 1`). Attribute derivations were calculated separately for each user and for the aggregated view of this incidence data (see also https://github.com/itchy2385/robust/?tab=readme-ov-file#incidences).
 
 ### Objects
 
